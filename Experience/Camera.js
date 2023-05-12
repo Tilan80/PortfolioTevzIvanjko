@@ -21,9 +21,10 @@ export default class Camera {
             0.1,
             1000
         );
-        this.perspectiveCamera.position.z = 2;
-        this.perspectiveCamera.position.y = 2;
-        this.perspectiveCamera.position.x = 2;
+        this.perspectiveCamera.position.x = 2.5;
+        this.perspectiveCamera.position.y = 3;
+        this.perspectiveCamera.position.z = 2.5;
+        this.perspectiveCamera.lookAt(-0.9, 0.5, -0.9);
         this.scene.add(this.perspectiveCamera);
         
     }
@@ -47,15 +48,16 @@ export default class Camera {
 
         const gridHelper = new THREE.GridHelper(10, 10);
         this.scene.add(gridHelper);
-
-        const axesHelper = new THREE.AxesHelper(5);
-        this.scene.add(axesHelper);
     }
 
     setOrbitControls() {
         this.controls = new OrbitControls(this.perspectiveCamera, this.canvas);
         this.controls.enableDamping = true;
         this.controls.enableZoom = true;
+        this.controls.minAzimuthAngle = 0;
+        this.controls.maxAzimuthAngle = Math.PI / 2;
+        //this.controls.minPolarAngle = Math.PI / 4;
+        this.controls.maxPolarAngle = Math.PI / 2;
     }
 
     resize() {

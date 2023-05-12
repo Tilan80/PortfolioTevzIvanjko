@@ -54,8 +54,8 @@ export default class World extends EventEmitter {
         if (this.room) {
             this.room.update();
         }
-        if (this.controls) {
+        /*if (this.controls) {
             this.controls.update();
-        }
+        }*/
     }
 }

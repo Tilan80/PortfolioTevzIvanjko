@@ -11,6 +11,7 @@ import Renderer from "./Renderer.js";
 //import Preloader from "./Preloader.js";
 
 import World from "./World/World.js";
+import Clickables from "./World/Clickables.js";
 //import Controls from "./World/Controls.js";
 
 export default class Experience {
@@ -29,6 +30,7 @@ export default class Experience {
         this.resources = new Resources(assets);
         //this.theme = new Theme();
         this.world = new World();
+        this.clickables = new Clickables();
         //this.preloader = new Preloader();
 
         /*this.preloader.on("enablecontrols", () => {

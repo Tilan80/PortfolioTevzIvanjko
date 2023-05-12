@@ -28,9 +28,9 @@ export default class Room {
         });
 
 
-
-        this.scene.add(this.actualRoom);
         this.actualRoom.scale.set(0.2, 0.2, 0.2);
+        this.scene.add(this.actualRoom);
+        
     }
 
 
