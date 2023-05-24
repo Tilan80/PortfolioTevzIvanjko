@@ -1,33 +1,106 @@
 import Experience from "../Experience.js";
 import * as THREE from "three";
 
+
 export default class Clickables {
     constructor() {
         this.experience = new Experience();
         this.scene = this.experience.scene;
+        this.camera = this.experience.camera.perspectiveCamera;
+        this.renderer = this.experience.renderer;
 
         this.setObjects();
+
+
     }
 
     setObjects() {
-        this.geometry = new THREE.BoxGeometry(0.05, 0.05, 0.05); 
-        this.material = new THREE.MeshBasicMaterial( { color: 0xD16666 } ); 
+        this.geometry = new THREE.BoxGeometry(0.05, 0.05, 0.05);
+        this.material = new THREE.MeshBasicMaterial({ color: 0xD16666 });
         this.material.wireframe = true;
 
-        this.cubeHob = new THREE.Mesh(this.geometry, this.material ); 
-        this.cubeHob.position.set (-0.7, 1, -0.5);
+        this.cubeHob = new THREE.Mesh(this.geometry, this.material);
+        this.cubeHob.position.set(-0.7, 1, -0.5);
 
-        this.cubeProj = new THREE.Mesh(this.geometry, this.material);
+        this.geometry1 = new THREE.BoxGeometry(0.05, 0.05, 0.05);
+        this.material1 = new THREE.MeshBasicMaterial({ color: 0xD16666 });
+        this.material1.wireframe = true;
+        this.cubeProj = new THREE.Mesh(this.geometry1, this.material1);
         this.cubeProj.position.set(0.1, 0.6, -0.6);
 
-        this.cubeLang = new THREE.Mesh(this.geometry, this.material);
+
+        this.geometry2 = new THREE.BoxGeometry(0.05, 0.05, 0.05);
+        this.material2 = new THREE.MeshBasicMaterial({ color: 0xD16666 });
+        this.material2.wireframe = true;
+        this.cubeLang = new THREE.Mesh(this.geometry2, this.material2);
         this.cubeLang.position.set(-0.7, 0.7, 0.1);
 
-        this.cubeEdu = new THREE.Mesh(this.geometry, this.material);
+
+        this.geometry3 = new THREE.BoxGeometry(0.05, 0.05, 0.05);
+        this.material3 = new THREE.MeshBasicMaterial({ color: 0xD16666 });
+        this.material3.wireframe = true;
+        this.cubeEdu = new THREE.Mesh(this.geometry3, this.material3);
         this.cubeEdu.position.set(0.7, 1, -1);
 
+        let cubes = [this.cubeHob, this.cubeProj, this.cubeLang, this.cubeEdu];
 
         this.scene.add(this.cubeHob, this.cubeProj, this.cubeLang, this.cubeEdu);
+
+        ////////////////////////raycasting
+
+        const pointer = new THREE.Vector2();
+        const raycaster = new THREE.Raycaster();
+
+
+        window.addEventListener('pointermove', (event) => {
+            // calculate pointer position in normalized device coordinates
+            // (-1 to +1) for both components
+
+            pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+            pointer.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+            //console.log(pointer.x + "\n" + pointer.y);
+            //console.log("Looking");
+
+            // update the picking ray with the camera and pointer position
+            raycaster.setFromCamera(pointer, this.camera);
+            cubes.forEach((cube) => {
+                cube.material.color.set(0xD16666);
+            })
+            // calculate objects intersecting the picking ray
+            const intersects = raycaster.intersectObjects(cubes, false);
+            for (let i = 0; i < intersects.length; i++) {
+                console.log("on");
+                intersects[i].object.material.color.set(0xff0000);
+
+            }
+
+        });
+
+        window.addEventListener('pointerdown', (event) => {
+            pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+            pointer.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+            //console.log(pointer.x + "\n" + pointer.y);
+            //console.log("Looking");
+
+            // update the picking ray with the camera and pointer position
+            raycaster.setFromCamera(pointer, this.camera);
+
+            // calculate objects intersecting the picking ray
+            const intersects = raycaster.intersectObjects(cubes, false);
+            for (let i = 0; i < intersects.length; i++) {
+                console.log("happend");
+                intersects[i].object.material.color.set(0x00ff00);
+                let a = "click" + i.toString;
+                document.getElementById(a, (elem) => {
+                    elem.style.zIndex = 7;
+                    console.log(a);
+                })
+            }
+
+        })
+
     }
 
 

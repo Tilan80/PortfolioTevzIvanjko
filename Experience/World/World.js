@@ -2,6 +2,7 @@ import * as THREE from "three";
 import Experience from "../Experience.js";
 
 import Room from "./Room.js";
+import Clickables from "./Clickables.js";
 //import Floor from "./Floor.js";
 //import Controls from "./Controls.js";
 import Environment from "./Environment.js";
@@ -16,12 +17,14 @@ export default class World extends EventEmitter {
         this.canvas = this.experience.canvas;
         this.camera = this.experience.camera;
         this.resources = this.experience.resources;
+
         //this.theme = this.experience.theme;
 
         this.resources.on("ready", () => {
             this.environment = new Environment();
             //this.floor = new Floor();
             this.room = new Room();
+            this.clickables = new Clickables();
             console.log("Created room");
             // this.controls = new Controls();
             //this.emit("worldready");
@@ -54,8 +57,5 @@ export default class World extends EventEmitter {
         if (this.room) {
             this.room.update();
         }
-        /*if (this.controls) {
-            this.controls.update();
-        }*/
     }
 }

@@ -8,9 +8,46 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
+  z-index: 2;
 }
 
 .experience-canvas{
   width: 100%;
   height: 100%;
+}
+
+#click0 {
+  position: fixed;
+  width: 50vw;
+  height: 50vh;
+  z-index: 1;
+  background-color: 0x0f0fff;
+  color: 0xffffff;
+}
+
+#click1 {
+  position: fixed;
+  width: 50vw;
+  height: 50vh;
+  z-index: 1;
+  background-color: 0x0f0fff;
+  color: 0xffffff;
+}
+
+#click2 {
+  position: fixed;
+  width: 50vw;
+  height: 50vh;
+  z-index: 1;
+  background-color: 0x0f0fff;
+  color: 0xffffff;
+}
+
+#click3 {
+  position: fixed;
+  width: 50vw;
+  height: 50vh;
+  z-index: 1;
+  background-color: 0x0f0fff;
+  color: 0xffffff;
 }

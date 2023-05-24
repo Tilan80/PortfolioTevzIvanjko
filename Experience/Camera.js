@@ -21,12 +21,11 @@ export default class Camera {
             0.1,
             1000
         );
-        this.perspectiveCamera.position.x = 2.5;
-        this.perspectiveCamera.position.y = 3;
-        this.perspectiveCamera.position.z = 2.5;
-        this.perspectiveCamera.lookAt(-0.9, 0.5, -0.9);
+        this.perspectiveCamera.position.z = 2;
+        this.perspectiveCamera.position.y = 2;
+        this.perspectiveCamera.position.x = 2;
         this.scene.add(this.perspectiveCamera);
-        
+
     }
 
     createOrthographicCamera() {
@@ -44,10 +43,7 @@ export default class Camera {
         this.orthographicCamera.position.z = 10;
         this.orthographicCamera.rotation.x = -Math.PI / 6;*/
 
-        this.scene.add(this.orthographicCamera);
-
-        const gridHelper = new THREE.GridHelper(10, 10);
-        this.scene.add(gridHelper);
+        //this.scene.add(this.orthographicCamera);
     }
 
     setOrbitControls() {
@@ -56,8 +52,9 @@ export default class Camera {
         this.controls.enableZoom = true;
         this.controls.minAzimuthAngle = 0;
         this.controls.maxAzimuthAngle = Math.PI / 2;
-        //this.controls.minPolarAngle = Math.PI / 4;
-        this.controls.maxPolarAngle = Math.PI / 2;
+        //this.controls.minPolarAngle = Math.PI / 10;
+        this.controls.maxPolarAngle = 9 * Math.PI / 20;
+        //this.controls.target = new THREE.Vector3(0,0.2,0);
     }
 
     resize() {
@@ -74,6 +71,7 @@ export default class Camera {
         this.orthographicCamera.bottom = -this.sizes.frustrum / 2;
         this.orthographicCamera.updateProjectionMatrix();
     }
+
 
     update() {
         this.controls.update();
