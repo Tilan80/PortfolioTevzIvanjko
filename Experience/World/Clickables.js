@@ -15,6 +15,7 @@ export default class Clickables {
     }
 
     setObjects() {
+
         this.geometry = new THREE.BoxGeometry(0.05, 0.05, 0.05);
         this.material = new THREE.MeshBasicMaterial({ color: 0xD16666 });
         this.material.wireframe = true;
@@ -43,6 +44,10 @@ export default class Clickables {
         this.cubeEdu.position.set(0.7, 1, -1);
 
         let cubes = [this.cubeHob, this.cubeProj, this.cubeLang, this.cubeEdu];
+        let cubeHob = [this.cubeHob];
+        let cubeProj = [this.cubeProj];
+        let cubeLang = [this.cubeLang];
+        let cubeEdu = [this.cubeEdu];
 
         this.scene.add(this.cubeHob, this.cubeProj, this.cubeLang, this.cubeEdu);
 
@@ -66,12 +71,14 @@ export default class Clickables {
             raycaster.setFromCamera(pointer, this.camera);
             cubes.forEach((cube) => {
                 cube.material.color.set(0xD16666);
+                cube.scale.set(1, 1, 1);
             })
             // calculate objects intersecting the picking ray
             const intersects = raycaster.intersectObjects(cubes, false);
             for (let i = 0; i < intersects.length; i++) {
                 console.log("on");
                 intersects[i].object.material.color.set(0xff0000);
+                intersects[i].object.scale.set(2, 2, 2);
 
             }
 
@@ -88,18 +95,35 @@ export default class Clickables {
             raycaster.setFromCamera(pointer, this.camera);
 
             // calculate objects intersecting the picking ray
-            const intersects = raycaster.intersectObjects(cubes, false);
-            for (let i = 0; i < intersects.length; i++) {
-                console.log("happend");
-                intersects[i].object.material.color.set(0x00ff00);
-                let a = "click" + i.toString;
-                document.getElementById(a, (elem) => {
-                    elem.style.zIndex = 7;
-                    console.log(a);
-                })
+            const intersects = raycaster.intersectObjects(cubeHob, false);
+            if (0 < intersects.length) {
+                intersects[0].object.material.color.set(0x00ff00);
+                let elem = document.getElementById("click0");
+                elem.style.zIndex = 7;
+            }
+            const intersects1 = raycaster.intersectObjects(cubeProj, false);
+            if (0 < intersects1.length) {
+                intersects1[0].object.material.color.set(0x00ff00);
+                let elem = document.getElementById("click1");
+                elem.style.zIndex = 7;
+            }
+            const intersects2 = raycaster.intersectObjects(cubeLang, false);
+            if (0 < intersects2.length) {
+                intersects2[0].object.material.color.set(0x00ff00);
+                let elem = document.getElementById("click2");
+                elem.style.zIndex = 7;
+            }
+            const intersects3 = raycaster.intersectObjects(cubeEdu, false);
+            if (0 < intersects3.length) {
+                intersects3[0].object.material.color.set(0x00ff00);
+                let elem = document.getElementById("click3");
+                elem.style.zIndex = 7;
             }
 
+
+
         })
+
 
     }
 

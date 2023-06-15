@@ -17,37 +17,73 @@
 }
 
 #click0 {
-  position: fixed;
+  position: absolute;
   width: 50vw;
   height: 50vh;
   z-index: 1;
-  background-color: 0x0f0fff;
-  color: 0xffffff;
+  border-radius: 10%;
+  border: 2px solid;
+  border-color: #ffffff;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #click1 {
-  position: fixed;
+  position: absolute;
   width: 50vw;
   height: 50vh;
   z-index: 1;
-  background-color: 0x0f0fff;
-  color: 0xffffff;
+  border-radius: 10%;
+  border: 2px solid;
+  border-color: #ffffff;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #click2 {
-  position: fixed;
+  position: absolute;
   width: 50vw;
   height: 50vh;
   z-index: 1;
-  background-color: 0x0f0fff;
-  color: 0xffffff;
+  border-radius: 10%;
+  border: 2px solid;
+  border-color: #ffffff;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #click3 {
-  position: fixed;
+  position: absolute;
   width: 50vw;
   height: 50vh;
   z-index: 1;
-  background-color: 0x0f0fff;
-  color: 0xffffff;
+  border-radius: 10%;
+  border: 2px solid;
+  border-color: #ffffff;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+:root {
+  --tp-base-background-color: rgba(0, 0, 0, 0.701);
+  --tp-button-background-color: rgb(44, 44, 44);
+  --tp-button-background-color-active: rgb(43, 43, 43);
+  --tp-button-background-color-hover: rgb(121, 121, 121);
+  --tp-button-foreground-color: hsla(0, 0%, 100%, 0.8);
 }

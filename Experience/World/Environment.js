@@ -10,18 +10,48 @@ export default class Environment {
         this.scene = this.experience.scene;
         this.debug = this.experience.debug;
 
-        if (this.debug) {
-            this.debugFolder = this.debug.addFolder({
-                title: 'Lights',
-                expanded: false
-            })
-        }
 
+        this.setMenu();
         this.setLighting();
         this.setOtherLighting();
         this.setFloor();
+        
         //this.setSunlight();
         //this.setGUI();
+    }
+
+    setMenu() {
+        if (this.debug) {
+            this.debugFolder = this.debug.addFolder({
+                title: 'MENU',
+                expanded: true
+            })
+
+            this.debugFolder.addButton({
+                title: "Hobbies",
+            }).on('click', () => {
+                let elem = document.getElementById("click0");
+                elem.style.zIndex = 7;
+            })
+            this.debugFolder.addButton({
+                title: "Projects",
+            }).on('click', () => {
+                let elem = document.getElementById("click1");
+                elem.style.zIndex = 7;
+            })
+            this.debugFolder.addButton({
+                title: "Languages",
+            }).on('click', () => {
+                let elem = document.getElementById("click2");
+                elem.style.zIndex = 7;
+            })
+            this.debugFolder.addButton({
+                title: "Education",
+            }).on('click', () => {
+                let elem = document.getElementById("click3");
+                elem.style.zIndex = 7;
+            })
+        }
     }
 
     setLighting() {
@@ -45,6 +75,10 @@ export default class Environment {
 
 
         if (this.debug) {
+            this.debugFolder = this.debug.addFolder({
+                title: 'Lights',
+                expanded: false
+            })
             this.debugFolder.addInput(
                 this.lightInput,
                 'mainColor',
@@ -205,9 +239,9 @@ export default class Environment {
             });
         }
 
-        
 
-        
+
+
     };
 
     resize() { }
