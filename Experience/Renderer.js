@@ -18,6 +18,11 @@ export default class Renderer {
             antialias: true,
         });
 
+        this.renderer.info.render.calls;
+        this.renderer.info.render.triangles;
+        this.renderer.info.memory.geometries;
+        this.renderer.info.memory.textures;
+        this.renderer.info.programs.length;
         this.renderer.useLegacyLights = true;
         this.renderer.outputColorSpace = THREE.SRGBColorSpace;
         this.renderer.toneMapping = THREE.CineonToneMapping;

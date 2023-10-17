@@ -57,7 +57,7 @@ export default class Environment {
     setLighting() {
         this.lightInput = {};
         this.lightInput.mainColor = "#ffffff"
-        this.lightInput.mainIntensity = 0.4;
+        this.lightInput.mainIntensity = 1;
 
         this.pointLight = new THREE.PointLight(this.lightInput.color, this.lightInput.mainIntensity, 5);
         this.pointLight.position.set(0.9, 1.5, 0.9);

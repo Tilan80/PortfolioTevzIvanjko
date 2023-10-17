@@ -2,6 +2,6 @@ export default [
     {
         name: "room",
         type: "glbModel",
-        path: "/models/GamingImpr.glb",
+        path: "/models/GamingImpr-transformed.glb",
     }
 ];
