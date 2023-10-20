@@ -70,7 +70,7 @@ export default class Environment {
         //this.pointLightHelper = new THREE.PointLightHelper(this.pointLight, 0.1);
         //this.scene.add(this.pointLightHelper);
 
-        this.ambientLight = new THREE.AmbientLight("#ffffff", 0.05);
+        this.ambientLight = new THREE.AmbientLight("#ffffff", 0.1);
         this.scene.add(this.ambientLight);
 
 
