@@ -16,12 +16,20 @@ The implementation into the website was accomplished using Three.js, with the as
 The scene components were organized into different sections:
 
 Html: Utilizing only the canvas bound to Three.js, along with four components comprising the portfolio (project descriptions, hobbies, skills, and education).
+
 Css: Used for basic styling and defining z-index to ensure that non-canvas components are hidden behind it.
+```
 Three.js Scene: Further divided into essential parts:
+
 Experience.js: The main JavaScript file connecting all others, enabling each linked component to call one another.
+
 Basics: Handling camera and rendering.
+
 Scene Creation: Comprising environment, room, clickable squares, and other fundamental scene elements.
+
 Add-ons: Files for obtaining the room in .glb format, screen size, and elapsed time.
+```
+
 ### Experience.js
 This file serves as the linking file between HTML and all JavaScript files, establishing the scene and enabling mutual calls among Three.js files.
 
