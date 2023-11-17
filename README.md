@@ -1,5 +1,8 @@
 # Portfolio_TevzIvanjko
 
+View the page at:
+https://tilan80.github.io/GamingRoom/
+
 ![Blender room](/Examples/Blender.png)
 ![View1](/Examples/View1.png)
 ![View2](/Examples/view2.png)
