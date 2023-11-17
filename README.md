@@ -2,6 +2,7 @@
 
 View the page at:
 https://tilan80.github.io/GamingRoom/
+(slow loading time)
 
 ![Blender room](/Examples/Blender.png)
 ![View1](/Examples/View1.png)
