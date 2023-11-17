@@ -22,7 +22,7 @@ Experience.js: The main JavaScript file connecting all others, enabling each lin
 Basics: Handling camera and rendering.
 Scene Creation: Comprising environment, room, clickable squares, and other fundamental scene elements.
 Add-ons: Files for obtaining the room in .glb format, screen size, and elapsed time.
-###Experience.js
+### Experience.js
 This file serves as the linking file between HTML and all JavaScript files, establishing the scene and enabling mutual calls among Three.js files.
 
 ### Basics
