@@ -2,8 +2,8 @@
 
 ![Blender room](/Examples/Blender.png)
 ![View1](/Examples/View1.png)
-![View2](/Examples/View2.png)
-![View3](/Examples/View3.png)
+![View2](/Examples/view2.png)
+![View3](/Examples/view3.png)
  
 ## Blender Room Visualization
 For the creation of the room, Blender was utilized. The room was designed to represent various aspects of my interests, including computer games, sports, music, computer-based creativity, and more. The process began with the modeling of different elements, ranging from simple to complex. Various modeling techniques were employed to ensure diversity in the types of models. Once satisfied with the models, colors and textures were added.
